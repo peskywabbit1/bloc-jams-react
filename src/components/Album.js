@@ -32,6 +32,17 @@ class Album extends Component {
             <col id="song-duration-column" />
           </colgroup>
           <tbody>
+            this.state.albums.songs.map( (album, song) =>
+            <Link to={`/album/${album.index.song}`} key={song}>
+            <tr {this.state.album.song.title.duration}> key={Blue} </tr>
+            <tr {this.state.album.song.title.duration}> key={Green} </tr>
+            <tr {this.state.album.song.title.duration}> key={Red} </tr>
+            <tr {this.state.album.song.title.duration}> key={Pink} </tr>
+            <tr {this.state.album.song.title.duration}> key={Magenta} </tr>
+            </Link>
+        )
+      }
+
           </tbody>
         </table>
     </section>
