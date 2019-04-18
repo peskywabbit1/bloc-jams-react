@@ -9,6 +9,7 @@ class Album extends Component {
     const album = albumData.find( album => {
       return album.slug === this.props.match.params.slug
     });
+    console.log("ALBUM:", album)
 
     this.state = {
       album: album
@@ -33,12 +34,13 @@ class Album extends Component {
           </colgroup>
           <tbody>
           {
-          this.state.album.map( ( songs ) =>
+          this.state.album.map( ( song, songIndex ) => (
           <tr>
-            <td>{songs.indexOf(0+1)}</td>
-            <td>{songs.title}</td>
-            <td>{songs.duration}</td>
+            <td>{songIndex+1}</td>
+            <td>{song.title}</td>
+            <td>{song.duration}</td>
           </tr>
+          )
         )
       }
           </tbody>
