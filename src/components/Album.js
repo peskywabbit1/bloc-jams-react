@@ -5,6 +5,8 @@ import albumData from './../data/albums';
 class Album extends Component {
   constructor(props) {
     super(props);
+    this.state = {
+      enter: false}
 
     const album = albumData.find( album => {
       return album.slug === this.props.match.params.slug
@@ -41,7 +43,24 @@ class Album extends Component {
       this.play();
     }
   }
-    render() {
+  _onMouseEnter = () => {
+    const enter = this.ref.ion-play
+    console.log("PLAY")
+    this.setState({
+      enter: true
+    })
+  }
+
+_onMouseLeave = () => {
+    const leave = this.ref.ion-pause
+    console.log(this.state)
+  };
+
+  }
+}
+  render(); {
+    const enter = this.state
+    const leave = this.state
     return (
       <section className="album">
         <section id="album-info">
@@ -65,6 +84,14 @@ class Album extends Component {
             <td>{songIndex+1}</td>
             <td>{song.title}</td>
             <td>{song.duration}</td>
+            <td><span className="ion-play"
+                  onMouseEnter={this._onMouseEnter}
+                  ref="ion-play"
+                  </span></td>
+            <td><span className="ion-pause"
+                  onMouseEnter={() =>
+                  console.log("pause")}>
+                  </span></td>
           </tr>
           )
         )
@@ -74,6 +101,5 @@ class Album extends Component {
     </section>
     );
   }
-}
 
 export default Album;
