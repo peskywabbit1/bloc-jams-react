@@ -42,15 +42,21 @@ class Album extends Component {
       this.play();
     }
   }
-  _onMousePlay(song) {
+  _onMouseEnter(song) {
     this.setState ({
     hoveredSong: className= "ion-play"
   });
 }
 
-_onMousePause(song) {
+_onMouseLeave(song) {
   this.setState ({
     hoveredSong: null
+  });
+}
+
+_onMousePause(song) {
+  this.setState({
+    hoveredSong: className= "ion-pause"
   });
 }
 
@@ -58,9 +64,8 @@ _onMousePause(song) {
     const isHovered = this.state.currentSong === hoveredSong;
 
     if (this.state.isHovered  && !isPlaying) {
-     return  ( _onMousePlay(song));
+     return  ( _onMouseEnter(song));
     }
-
     if else {
         (this.state isHovered && isPlaying) {
         return  (_onMousePause(song));
@@ -96,10 +101,8 @@ _onMousePause(song) {
             <td>{songIndex+1}</td>
             <td>{song.title}</td>
             <td>{song.duration}</td>
-            <td><span _onMousePlay (
-              this.getIconForSong(ion-play))
-              _onMousePause
-              (this.getIconforSong(ion-pause))></span>
+            <td onMouseEnter={() => this._onMouseEnter(song)}>
+            {this.getIconForSong(song)}</td>
             </td>
           </tr>
           )
