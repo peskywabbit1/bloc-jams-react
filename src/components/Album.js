@@ -5,8 +5,6 @@ import albumData from './../data/albums';
 class Album extends Component {
   constructor(props) {
     super(props);
-    this.state = {
-      enter: false}
 
     const album = albumData.find( album => {
       return album.slug === this.props.match.params.slug
@@ -15,7 +13,9 @@ class Album extends Component {
     this.state = {
       album: album,
       currentSong: album.songs[0],
-      isPlaying: false
+      isPlaying: false,
+      hoveredSong: null
+      getIconForSong: true
     };
 
     this.audioElement = document.createElement('audio');
@@ -43,24 +43,37 @@ class Album extends Component {
       this.play();
     }
   }
-  _onMouseEnter = () => {
-    const enter = this.ref.ion-play
-    console.log("PLAY")
-    this.setState({
-      enter: true
-    })
-  }
-
-_onMouseLeave = () => {
-    const leave = this.ref.ion-pause
-    console.log(this.state)
-  };
-
-  }
+  _onMousePlay(song) {
+    this.setState ({
+    hoveredSong: className= "ion-play"
+  });
 }
+
+_onMousePause(song) {
+  this.setState ({
+    hoveredSong: null
+  });
+}
+
+  getIconForSong(song) {
+    const isHovered = this.state.currentSong === hoveredSong;
+
+    if (this.state.isHovered  && !isPlaying) {
+     return  ( _onMousePlay(song));
+    }
+
+    if else {
+        (this.state isHovered && isPlaying) {
+        return  (_onMousePause(song));
+    }
+  }
+    else {
+    return (this.hoveredSong ())
+        }
+      }
+
   render(); {
-    const enter = this.state
-    const leave = this.state
+
     return (
       <section className="album">
         <section id="album-info">
@@ -84,14 +97,11 @@ _onMouseLeave = () => {
             <td>{songIndex+1}</td>
             <td>{song.title}</td>
             <td>{song.duration}</td>
-            <td><span className="ion-play"
-                  onMouseEnter={this._onMouseEnter}
-                  ref="ion-play"
-                  </span></td>
-            <td><span className="ion-pause"
-                  onMouseEnter={() =>
-                  console.log("pause")}>
-                  </span></td>
+            <td><span _onMousePlay (
+              this.getIconForSong(ion-play))
+              _onMousePause
+              (this.getIconforSong(ion-pause))></span>
+            </td>
           </tr>
           )
         )
