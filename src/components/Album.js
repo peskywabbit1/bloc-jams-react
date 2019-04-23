@@ -15,7 +15,6 @@ class Album extends Component {
       currentSong: album.songs[0],
       isPlaying: false,
       hoveredSong: null
-      getIconForSong: true
     };
 
     this.audioElement = document.createElement('audio');
