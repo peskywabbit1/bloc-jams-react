@@ -61,22 +61,26 @@ _onMousePause(song) {
 }
 
   getIconForSong(song) {
-    const isHovered = this.state.currentSong === hoveredSong;
 
-    if (this.state.isHovered  && !isPlaying) {
-     return  ( _onMouseEnter(song));
+  const isHovered =
+    this.state.currentSong === hoveredSong;
+
+  if (this.state.isHovered  && !isPlaying); {
+      return ( _onMouseEnter(song));
     }
-    if else {
-        (this.state isHovered && isPlaying) {
+      else if
+        (this.state.isHovered && isPlaying);{
         return  (_onMousePause(song));
-    }
+
   }
     else {
-    return (this.hoveredSong ())
-        }
+    return (this.hoveredSong ());
       }
+    }
 
   render(); {
+    onMouseEnter={() => this._onMouseEnter(song)}>
+    {this.getIconForSong(song)}
 
     return (
       <section className="album">
@@ -101,13 +105,20 @@ _onMousePause(song) {
             <td>{songIndex+1}</td>
             <td>{song.title}</td>
             <td>{song.duration}</td>
-            <td onMouseEnter={() => this._onMouseEnter(song)}>
-            {this.getIconForSong(song)}</td>
+            <td <span className="ion-play"></span></td>
             </td>
-          </tr>
-          )
-        )
-      }
+          <td>
+          (this.state.currentSong.title === song.title) ?
+                <span className={this.state.isPlaying ? "ion-pause" : "ion-play"}></span>
+                :
+                (this.state.isHovered === index+1) ?
+                <span className="ion-play"></span>
+                <span className={this.state.!isPlaying ? "ion-play" : "ion-pause"}></span>
+                :
+                (this.state.isHovered === index+1) ?
+                <span className="ion-pause"></span>
+          </td>
+        </tr>
           </tbody>
         </table>
     </section>
