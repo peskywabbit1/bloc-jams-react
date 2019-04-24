@@ -38,7 +38,8 @@ class Album extends Component {
       this.pause();
     }
     else {
-    if (!isSameSong) {this.setSong(song); }
+    if (!isSameSong)
+    {this.setSong(song); }
       this.play();
     }
   }
@@ -66,27 +67,24 @@ _onMousePause(song) {
     this.state.currentSong === hoveredSong;
 
   if (this.state.isHovered  && !isPlaying); {
-      return ( _onMouseEnter(song));
-    }
-      else if
-        (this.state.isHovered && isPlaying);{
-        return  (_onMousePause(song));
-
-  }
-    else {
+      return  _onMouseEnter(song);
+  }   else if
+      (this.state.isHovered && isPlaying) {
+      return  _onMousePause(song);
+  }   else {
     return (this.hoveredSong ());
       }
     }
 
-  render(); {
-    onMouseEnter={() => this._onMouseEnter(song)}>
-    {this.getIconForSong(song)}
-
+  render(){
     return (
       <section className="album">
         <section id="album-info">
-          <img id="album-cover-art" src={this.state.album.albumCover} alt={this.state.album.title}/>
-          <div className="album-details">
+          <img
+            id="album-cover-art"
+            src={this.state.album.albumCover}
+            alt={this.state.album.title}/>
+        <div className="album-details">
             <h1 id="album-title">{this.state.album.title}</h1>
             <h2 className="artist">{this.state.album.artist}</h2>
             <div id="release-info">{this.state.album.releaseInfo}</div>
@@ -100,29 +98,22 @@ _onMousePause(song) {
           </colgroup>
           <tbody>
       {
-         this.state.album.songs.map( ( song, songIndex ) => (
-           <tr className="song" key={songIndex} onClick={() => this.handleSongClick(song)} >
-            <td>{songIndex+1}</td>
+         this.state.album.songs.map(( song, index ) => (
+           <tr
+              className="song"
+              key={songIndex}
+              onClick={() => this.handleSongClick(song)}
+            >
+            <td>{index+1}</td>
             <td>{song.title}</td>
             <td>{song.duration}</td>
-            <td <span className="ion-play"></span></td>
-            </td>
-          <td>
-          (this.state.currentSong.title === song.title) ?
-                <span className={this.state.isPlaying ? "ion-pause" : "ion-play"}></span>
-                :
-                (this.state.isHovered === index+1) ?
-                <span className="ion-play"></span>
-                <span className={this.state.!isPlaying ? "ion-play" : "ion-pause"}></span>
-                :
-                (this.state.isHovered === index+1) ?
-                <span className="ion-pause"></span>
-          </td>
-        </tr>
+            </tr>
+          ))}
           </tbody>
         </table>
     </section>
-    );
+  );
   }
+}
 
 export default Album;
