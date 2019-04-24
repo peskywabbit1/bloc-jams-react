@@ -44,24 +44,18 @@ class Album extends Component {
   }
   _onMouseEnter(song) {
     this.setState({
-      hoveredSong: (className = "ion-play")
+      hoveredSong: song
     });
   }
 
   _onMouseLeave(song) {
     this.setState({
-      hoveredSong: null
-    });
-  }
-
-  _onMousePause(song) {
-    this.setState({
-      hoveredSong: (className = "ion-pause")
+      hoveredSong: song
     });
   }
 
   getIconForSong(song) {
-    const isHovered = this.state.currentSong === hoveredSong;
+    const isHovered = this.state.currentSong === this.state.hoveredSong;
 
     if (this.state.isHovered && !this.isPlaying) {
       return this._onMouseEnter(song);
