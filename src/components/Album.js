@@ -42,29 +42,29 @@ class Album extends Component {
       this.play();
     }
   }
+
   onMouseEnter(song) {
     this.setState({
-      hoveredSong: className="ion-play"
+      hoveredSong: song
     });
   }
 
-  onMouseLeave(song) {
+  onMouseLeave() {
     this.setState({
-      hoveredSong: className="ion-pause"
+      hoveredSong: null
     });
   }
 
-  getIconForSong(song) {
-    const isHovered = this.state.currentSong === this.state.hoveredSong;
-
-    if (this.state.isHovered && !this.isPlaying) {
-      return this.onMouseEnter(song);
-    } else if (this.state.isHovered && this.isPlaying) {
-      return this.onMouseLeave(song);
+  getIconForSong(song, index) {
+    if (this.state.currentSong === song && this.state.isPlaying) {
+      return <span className='icon ion-md-pause'></span>
+    } else if (song === this.state.hoveredSong) {
+      return <span className='icon ion-md-play'></span>
     } else {
-      return this.hoveredSong();
+      return index + 1
     }
   }
+
 
   render() {
     return (
@@ -92,15 +92,13 @@ class Album extends Component {
               <tr
                 className="song"
                 key={index}
-                onClick={() => this.handleSongClick(song)}>
-                <td><span>{index + 1}</span></td>
+                onClick={() => this.handleSongClick(song)}
+                onMouseEnter={() => this.onMouseEnter(song)}
+                onMouseLeave={() => this.onMouseLeave()}
+              >
+                <td>{this.getIconForSong(song, index)}</td>
                 <td>{song.title}</td>
                 <td>{song.duration}</td>
-                <td><span className={this.state.isPlaying ? "ion-pause" : "ion-play"}></span></td>
-                <td><button onMouseEnter={() => this.state.onMouseEnter(song)}>
-                "ion-play"</button></td>
-                <td><button onMouseLeave={() => this.state.onMouseLeave(song)}>
-                "ion-pause"</button></td>
               </tr>
             )}
           </tbody>
