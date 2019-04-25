@@ -42,15 +42,15 @@ class Album extends Component {
       this.play();
     }
   }
-  _onMouseEnter(song) {
+  onMouseEnter(song) {
     this.setState({
-      hoveredSong: song
+      hoveredSong: className="ion-play"
     });
   }
 
-  _onMouseLeave(song) {
+  onMouseLeave(song) {
     this.setState({
-      hoveredSong: song
+      hoveredSong: className="ion-pause"
     });
   }
 
@@ -58,9 +58,9 @@ class Album extends Component {
     const isHovered = this.state.currentSong === this.state.hoveredSong;
 
     if (this.state.isHovered && !this.isPlaying) {
-      return this._onMouseEnter(song);
+      return this.onMouseEnter(song);
     } else if (this.state.isHovered && this.isPlaying) {
-      return this._onMousePause(song);
+      return this.onMouseLeave(song);
     } else {
       return this.hoveredSong();
     }
@@ -96,8 +96,11 @@ class Album extends Component {
                 <td><span>{index + 1}</span></td>
                 <td>{song.title}</td>
                 <td>{song.duration}</td>
-                <td><span className = "ion-play"></span></td>
-                <td><span className = "ion-pause"></span></td>
+                <td><span className={this.state.isPlaying ? "ion-pause" : "ion-play"}></span></td>
+                <td><button onMouseEnter={() => this.state.onMouseEnter(song)}>
+                "ion-play"</button></td>
+                <td><button onMouseLeave={() => this.state.onMouseLeave(song)}>
+                "ion-pause"</button></td>
               </tr>
             )}
           </tbody>
