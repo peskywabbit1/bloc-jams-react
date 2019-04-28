@@ -51,6 +51,15 @@ class Album extends Component {
     this.play();
   }
 
+  handleNextClick() {
+    const nextCurrentIndex = this.state.album.songs.findIndex(song => this.state.currentSong === song);
+    const nextIndex = Math.min (nextCurrentIndex + 1, 4);
+    const nextSong = this.state.album.songs[nextIndex];
+    this.setSong(nextSong);
+    this.play();
+  }
+
+
   onMouseEnter(song) {
     this.setState({
       hoveredSong: song
@@ -116,6 +125,8 @@ class Album extends Component {
         currentSong={this.state.currentSong}
         handleSongClick={() => this.handleSongClick(this.state.currentSong)}
         handlePrevClick={() => this.handlePrevClick()}
+        handleNextClick={() => this.handleNextClick()}
+
         />
         </section>
     );
