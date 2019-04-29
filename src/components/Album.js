@@ -195,7 +195,7 @@ class Album extends Component {
               >
                 <td>{this.getIconForSong(song, index)}</td>
                 <td>{song.title}</td>
-                <td>{song.duration}</td>
+                <td>{this.formatTime(song.duration)}</td>
               </tr>
             )}
           </tbody>
@@ -208,7 +208,7 @@ class Album extends Component {
         duration={this.audioElement.duration}
         handleTimeChange={(e) => this.handleTimeChange (e)}
         handleVolumeChange={(e) =>this.handleVolumeChange (e)}
-        formatChange={() => this.formatChange(this.state.currentTime)}
+        formatTime={(t) => this.formatTime(t)}
         handleSongClick={() => this.handleSongClick(this.state.currentSong)}
         handlePrevClick={() => this.handlePrevClick()}
         handleNextClick={() => this.handleNextClick()}
