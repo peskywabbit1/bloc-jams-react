@@ -29,7 +29,14 @@ class PlayerBar extends Component {
         </section>
         <section id="volume-control">
           <div className="icon ion-volume-low"></div>
-          <input type="range" className="seek-bar" value="80" />
+          <input type="range"
+          className="seek-bar"
+          value={this.props.currentVolume}
+          min="0"
+          max="1"
+          step="0.1"
+          onChange={this.props.handleVolumeChange}
+          />
           <div className="icon ion-volume-high"></div>
         </section>
       </section>
