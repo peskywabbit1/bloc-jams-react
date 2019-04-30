@@ -68,10 +68,15 @@ class Album extends Component {
       return "-:--";
     } else {
       let minutes = currentTime / 60;
-      let seconds = currentTime % 60;
-      return minutes.toFixed(0) + ":" + seconds.toFixed(0);
+      let seconds = (currentTime % 60).toFixed(0);
+      if (seconds < 10 ){
+        seconds="0" + seconds
+      }
+      return minutes.toFixed(0) + ":" + seconds;
     }
   }
+
+
 
   handleVolumeChange (e) {
     const newVolume = this.audioElement.currentVolume * e.target.value;
