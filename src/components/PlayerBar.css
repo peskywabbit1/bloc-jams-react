@@ -3,13 +3,3 @@
 .inline-time {
   display: inline-block;
 }
-
-.demo-layout-transparent {
-  background: ('.../assets/images/womens work.jpeg') center / cover;
-}
-.demo-layout-transparent .mdl-layout__header,
-.demo-layout-transparent .mdl-layout__drawer-button {
-  /* This background is dark, so we set text to white. Use 87% black instead if
-     your background is light. */
-  color: white;
-}
