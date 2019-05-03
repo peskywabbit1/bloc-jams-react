@@ -31,3 +31,13 @@
     transform: rotate(360deg);
   }
 }
+
+.demo-layout-transparent {
+  background: './Users/jessicawalker/code/bloc-jams-react/public/assets/images/womens work.jpeg'
+  center / cover;
+}
+.demo-layout-transparent .mdl-layout__header,
+.demo-layout-transparent .mdl-layout__drawer-button {
+
+  color: white;
+}

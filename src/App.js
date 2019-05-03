@@ -8,35 +8,36 @@ import Album from './components/Album';
 
 class App extends Component {
   render() {
-
     return (
-
-
-    <div className="App">
-      <div class="demo-layout-transparent mdl-layout mdl-js-layout">
-      <header class="mdl-layout__header mdl-layout__header--transparent">
-        <div class="mdl-layout__header-row">
-          <span class="mdl-layout-title">Title</span>
-            <div class="mdl-layout-spacer"></div>
-              <nav class="mdl-navigation">
-                <a class="mdl-navigation__link" href="">Link</a>
-                <a class="mdl-navigation__link" href="">Link</a>
-              </nav>
-              <nav>
-              <h1>Bloc Jams</h1>
-                <Link to='/'>Landing</Link>
-                <Link to='/library'>Library</Link>
-              </nav>
+      <div className="App">
+        <div className="demo-layout-transparent mdl-layout mdl-js-layout">
+      <header className="mdl-layout__header mdl-layout__header--transparent">
+        <div className="mdl-layout__header-row">
+          <span className="mdl-layout-title">Title</span>
+            <div className="mdl-layout-spacer"></div>
+          <nav className="mdl-navigation">
+            <Link to = '/'>Landing</Link>
+            <Link to = '/library'>Library</Link>
+          </nav>
         </div>
       </header>
-      <main class="mdl-layout__content">
-        <Route exact path="/" component={Landing} />
-        <Route path="/library" component={Library} />
-        <Route path="/album/:slug" component={Album} />
-      </main>
-      </div>
-    </div>
-
+          <div class="mdl-layout__drawer">
+            <span class="mdl-layout-title">
+            <h1>Bloc Jams</h1>
+            </span>
+            <nav className="mdl-navigation">
+            <Link to = '/'>Landing</Link>
+            <Link to = '/library'>Library</Link>
+            </nav>
+          </div>
+          <main>
+            <div className="mdl-layout__content">
+            <Route exact path="/" component={Landing} />
+            <Route path="/library" component={Library} />
+            <Route path="/album/:slug" component={Album} />
+            </div>
+          </main>
+        </div>
     );
   }
 }
