@@ -13,7 +13,7 @@ class App extends Component {
         <div className="demo-layout-transparent mdl-layout mdl-js-layout">
       <header className="mdl-layout__header mdl-layout__header--transparent">
         <div className="mdl-layout__header-row">
-          <span className="mdl-layout-title">Title</span>
+          <span className="mdl-layout-title">Bloc Jams</span>
             <div className="mdl-layout-spacer"></div>
           <nav className="mdl-navigation">
             <Link to = '/'>Landing</Link>
@@ -21,8 +21,8 @@ class App extends Component {
           </nav>
         </div>
       </header>
-          <div class="mdl-layout__drawer">
-            <span class="mdl-layout-title">
+          <div className="mdl-layout__drawer">
+            <span className="mdl-layout-title">
             <h1>Bloc Jams</h1>
             </span>
             <nav className="mdl-navigation">
@@ -37,6 +37,7 @@ class App extends Component {
             <Route path="/album/:slug" component={Album} />
             </div>
           </main>
+        </div>
         </div>
     );
   }
