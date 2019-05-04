@@ -7,9 +7,13 @@ class Library extends Component {
     super(props);
     this.state = { albums: albumData };
   }
-    render () {
-      return (
-        <section className='library'>
+  componentDidMount () {
+    this.props.change_page_state ("library");
+  }
+
+  render () {
+    return (
+      <section className='library'>
         {
           this.state.albums.map( (album, index) =>
           <Link to={`/album/${album.slug}`} key={index}>
@@ -19,7 +23,7 @@ class Library extends Component {
           <div>{album.songs.length} songs</div>
           </Link>
       )
-    }
+       }
         </section>
       );
     }

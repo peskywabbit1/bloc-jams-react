@@ -7,10 +7,23 @@ import Album from './components/Album';
 
 
 class App extends Component {
+  constructor(props) {
+    super(props);
+    this.state = { current_page: ""};
+  }
+  change_page_state (new_page) {
+    this.setState ( {current_page: new_page} )
+  }
   render() {
+    let background;
+    if (this.state.current_page === "landing"){
+      background = "landing-page-background"
+    } else if (this.state.current_page === "library") {
+      background = "blur-background-library"
+    }
     return (
       <div className="App">
-        <div className="demo-layout-transparent mdl-layout mdl-js-layout">
+        <div className={`${background} mdl-layout mdl-js-layout`}>
       <header className="mdl-layout__header mdl-layout__header--transparent">
         <div className="mdl-layout__header-row">
           <span className="mdl-layout-title">Bloc Jams</span>
@@ -29,9 +42,9 @@ class App extends Component {
           </div>
           <main>
             <div className="mdl-layout__content">
-            <Route exact path="/" component={Landing} />
-            <Route path="/library" component={Library} />
-            <Route path="/album/:slug" component={Album} />
+            <Route exact path="/" render={(routeProps) => (<Landing {...routeProps} change_page_state={this.change_page_state.bind(this)} />) }/>
+            <Route path="/library" render={(routeProps) => (<Library {...routeProps} change_page_state={this.change_page_state.bind(this)} />) }/>
+            <Route path="/album/:slug" render={(routeProps) => (<Album {...routeProps} change_page_state={this.change_page_state.bind(this)} />) }/>
             </div>
           </main>
         </div>

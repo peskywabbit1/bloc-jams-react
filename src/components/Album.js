@@ -43,6 +43,7 @@ class Album extends Component {
       'durationchange',
       this.eventListeners.durationchange
     );
+    this.props.change_page_state ("library");
   }
 
     componentWillUnmount() {

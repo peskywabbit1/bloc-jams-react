@@ -1,6 +1,13 @@
-import React from 'react';
+import React, { Component } from 'react';
 
-const Landing = () => (
+
+class Landing extends Component {
+
+  componentDidMount () {
+    this.props.change_page_state ("landing");
+  }
+  render () {
+    return (
   <section className="landing">
   <h1 className="hero-title">Turn the music up!</h1>
   <section className="selling-points">
@@ -18,6 +25,8 @@ const Landing = () => (
     </div>
   </section>
   </section>
-);
+    )
+  }
+}
 
 export default Landing;

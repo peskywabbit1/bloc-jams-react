@@ -32,7 +32,7 @@
   }
 }
 
-.demo-layout-transparent {
+.landing-page-background {
   background-image: url('/assets/images/girl_headphones.png');
   background-position: center;
   background-size: cover;
@@ -40,11 +40,11 @@
 .demo-layout-transparent .mdl-layout__header,
 .demo-layout-transparent .mdl-layout__drawer-button {
 
-  color: purple;
+  color: white;
 
 }
 
-.blur-background {
+.blur-background-library {
   background-image: url('/assets/images/blurred_backgrounds/blur_bg_3.jpg');
   background-position: center;
   background-size: cover;
