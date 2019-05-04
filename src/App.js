@@ -15,10 +15,6 @@ class App extends Component {
         <div className="mdl-layout__header-row">
           <span className="mdl-layout-title">Bloc Jams</span>
             <div className="mdl-layout-spacer"></div>
-          <nav className="mdl-navigation">
-            <Link to = '/'>Landing</Link>
-            <Link to = '/library'>Library</Link>
-          </nav>
         </div>
       </header>
           <div className="mdl-layout__drawer">
@@ -27,7 +23,8 @@ class App extends Component {
             </span>
             <nav className="mdl-navigation">
             <Link to = '/'>Landing</Link>
-            <Link to = '/library'>Library</Link>
+            <Link to = '/library'>Library
+            </Link>
             </nav>
           </div>
           <main>
