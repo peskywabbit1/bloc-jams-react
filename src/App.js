@@ -15,29 +15,27 @@ class App extends Component {
     this.setState ( {current_page: new_page} )
   }
   render() {
-    let background;
-    if (this.state.current_page === "landing"){
-      background = "landing-page-background"
-    } else if (this.state.current_page === "library") {
+    let background = "";
+    if (this.state.current_page === "library") {
       background = "blur-background-library"
     }
     return (
       <div className="App">
         <div className={`${background} mdl-layout mdl-js-layout`}>
-      <header className="mdl-layout__header mdl-layout__header--transparent">
+      <header className="mdl-layout__header">
         <div className="mdl-layout__header-row">
           <span className="mdl-layout-title">Bloc Jams</span>
             <div className="mdl-layout-spacer"></div>
         </div>
       </header>
           <div className="mdl-layout__drawer">
-            <span className="mdl-layout-title">
-            <h1>Bloc Jams</h1>
+            <span className="bloc-jams-title">
+            <h4></h4>
             </span>
+
             <nav className="mdl-navigation">
-            <Link to = '/'>Landing</Link>
-            <Link to = '/library'>Library
-            </Link>
+              <Link to = '/'><h4>Landing</h4></Link><br/>
+              <Link to = '/library'><h4>Library</h4></Link>
             </nav>
           </div>
           <main>
