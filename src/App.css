@@ -72,15 +72,8 @@ header.mdl-layout__header {
   background-size: cover;
 }
 
-.bloc-jams-title {
-  background-image: url('/assets/images/bloc_jams_logo.png');
-  width: 40%;
-  height: 15%;
-  margin-left: 30%;
-  margin-top: 30%;
-  background-color: #4b1c58;
-  background-repeat: no-repeat;
-  background-size: 150%
+.bloc-title {
+  align-self: center;
 }
 
 .point {
@@ -104,4 +97,20 @@ header.mdl-layout__header {
 
 .mdl-navigation {
   : white);
+}
+
+#song-list {
+  width: 100%;
+}
+
+.song {
+  color: white;
+}
+
+.player-bar {
+  margin: 25px;
+}
+
+.player-bar section {
+  margin: 10px;
 }

@@ -29,9 +29,9 @@ class App extends Component {
         </div>
       </header>
           <div className="mdl-layout__drawer">
-            <span className="bloc-jams-title">
-            <h4></h4>
-            </span>
+
+
+            <img className="bloc-title" src="/assets/images/bloc_jams_logo.png"/>
 
             <nav className="mdl-navigation">
               <Link to = '/'><h4>Landing</h4></Link><br/>
