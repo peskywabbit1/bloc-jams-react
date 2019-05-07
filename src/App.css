@@ -1,5 +1,5 @@
 .App {
-  text-align: left;
+  text-align: center;
 }
 
 .App-logo {
@@ -125,6 +125,9 @@
   color: white;
 }
 
+.point-description {
+  font-size: 16px;
+}
 
 .point-title,
 .point-description
@@ -148,16 +151,18 @@
   margin-top: 20px;
 }
 
-.mdl-navigation a, h5 {
+.flexbox-container {
   color: white;
-  padding-top: 50px;
+  padding-top: 80px;
   align-items: left;
   margin: 0px;
   font-style: italic;
+  display: flex;
+  flex-direction: column;
 }
-h5:link {
-  align-content: right;
-}
+
+
+
 
 #song-list {
   width: 100%;
