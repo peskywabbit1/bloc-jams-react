@@ -32,7 +32,7 @@
   }
 }
 
-header.mdl-layout__header {
+.mdl-layout__header {
   background-color: #4b1c58;
 }
 
@@ -50,15 +50,23 @@ header.mdl-layout__header {
   background-image: url('/assets/images/girl_headphones.png');
   background-position: center;
   background-size: cover;
-  height: 500px;
+  height: 700px;
+  padding: 0px;
+}
+
+.landing mdl-grid mdl-cell {
+  /*trying to find solution the white left margin*/
 }
 
 .selling-points {
   background-color: #4b1c58;
 }
 
-.mdl-layout__drawer {
-  background-color: #4b1c58;
+.mdl-layout__drawer.is-visible {
+  background-color: #3e1a9705;
+  box-shadow:  rgba(0, 0, 0, 0);
+  border-right: 0px;
+  width: 100px;
 }
 
 
@@ -66,13 +74,20 @@ header.mdl-layout__header {
   color: white;
 }
 
+
+
 .blur-background-library {
   background-image: url('/assets/images/blurred_backgrounds/blur_bg_3.jpg');
   background-position: center;
   background-size: cover;
 }
 
-.bloc-title {
+.mdl-layout__obfuscator.is-visible {
+    pointer-events: auto;
+    opacity: 0;
+}
+
+.bloc-logo {
   align-self: center;
 }
 
@@ -83,28 +98,28 @@ header.mdl-layout__header {
 
 .hero-title,
 .point-title,
-.point-description {
-  color: white
+.point-description
+.album-content,
+.song,
+.album-details {
+  color: white;
 }
 
-#libary a {
-  color: #ffffff;
+#library  div {
+  color: white;
 }
 
 .hamburger-drawer {
   color: rgb(239, 240, 243);
+  width: 20%;
 }
 
-.mdl-navigation {
-  : white);
+.mdl-navigation a {
+  color: white;
 }
 
 #song-list {
   width: 100%;
-}
-
-.song {
-  color: white;
 }
 
 .player-bar {

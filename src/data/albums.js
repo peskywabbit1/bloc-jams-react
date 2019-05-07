@@ -1,4 +1,6 @@
-export default [{
+export default
+
+[{
   title: 'The Colors',
   artist: 'Pablo Picasso',
   releaseInfo: '1909 Spanish Records',
