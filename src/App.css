@@ -34,6 +34,7 @@
 
 .mdl-layout__header {
   background-color: #4b1c58;
+  min-height: 100px;
 }
 
 .landing {
@@ -50,28 +51,35 @@
   background-image: url('/assets/images/girl_headphones.png');
   background-position: center;
   background-size: cover;
-  height: 700px;
+  height: 800px;
   padding: 0px;
+  padding-right: 0px;
+  padding-left: 0px;
 }
 
 .landing mdl-grid mdl-cell {
-  /*trying to find solution the white left margin*/
+
 }
+
 
 .selling-points {
   background-color: #4b1c58;
+  padding: 0px;
+  margin: 0px;
 }
 
 .mdl-layout__drawer.is-visible {
   background-color: #3e1a9705;
   box-shadow:  rgba(0, 0, 0, 0);
   border-right: 0px;
+  border-left: 0px;
   width: 100px;
 }
 
 
 .mdl-layout__drawer-button {
   color: white;
+  margin-top: 20px;
 }
 
 
@@ -87,8 +95,18 @@
     opacity: 0;
 }
 
+.hero-title {
+  font-size: 48px;
+  font-style: italic;
+  margin-top: 20px;
+  margin-left: 420px;
+  align-content: center;
+}
+
 .bloc-logo {
-  align-self: center;
+  align-content: right;
+  margin-top:40px;
+
 }
 
 .point {
@@ -96,7 +114,7 @@
   color: white;
 }
 
-.hero-title,
+
 .point-title,
 .point-description
 .album-content,
@@ -109,13 +127,19 @@
   color: white;
 }
 
+.albumCover {
+  shape-outside: circle(50%);
+}
+
 .hamburger-drawer {
   color: rgb(239, 240, 243);
   width: 20%;
+  margin-top: 20px;
 }
 
 .mdl-navigation a {
   color: white;
+  padding-top: 50px;
 }
 
 #song-list {

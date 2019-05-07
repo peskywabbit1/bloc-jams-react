@@ -24,17 +24,12 @@ class App extends Component {
         <div className={`${background} mdl-layout mdl-js-layout`}>
       <header className="mdl-layout__header">
         <div className="mdl-layout__header-row">
-
-          <span className="mdl-layout-title">Bloc Jams</span>
           <span className="hero-title">Turn the music up!</span>
             <div className="mdl-layout-spacer"></div>
+            <img className="bloc-logo" src="/assets/images/bloc_jams_logo.png" alt="Bloc Jams logo"/>
         </div>
       </header>
           <div className="mdl-layout__drawer is-visible">
-
-
-            <img className="bloc-logo" src="/assets/images/bloc_jams_logo.png" alt="Bloc Jams logo"/>
-
             <nav className="mdl-navigation">
               <Link to = '/'><h4>Landing</h4></Link><br/>
               <Link to = '/library'><h4>Library</h4></Link>
