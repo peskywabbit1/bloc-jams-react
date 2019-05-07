@@ -31,8 +31,8 @@ class App extends Component {
       </header>
           <div className="mdl-layout__drawer is-visible">
             <nav className="mdl-navigation">
-              <Link to = '/'><h4>Landing</h4></Link><br/>
-              <Link to = '/library'><h4>Library</h4></Link>
+              <Link to = '/'><h5>Landing</h5></Link><br/>
+              <Link to = '/library'><h5>Library</h5></Link>
             </nav>
           </div>
           <main>
